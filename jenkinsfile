@@ -1,6 +1,7 @@
 // basic -1
 pipeline {
     agent { label 'slave2' }
+    tools { maven 'mvn398' }
     stages {
         stage('build') {
             steps {
