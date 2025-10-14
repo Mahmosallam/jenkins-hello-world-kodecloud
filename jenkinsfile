@@ -1,0 +1,19 @@
+// basic -1
+pipeline{
+    agent { label: 'slave2' }
+    stages{
+        stage('build'){
+            echo "this is build stage"
+            sh 'mvn -version'
+            sh 'mvn clean package -DskipTests'
+        }
+        stage('build'){
+            echo "this is test stage"
+            sh 'mvn test'
+        }
+        stage('run'){
+            echo "this is run stage"
+            sh 'java -jar target/hello-demo-*.jar'
+        }
+    }
+}
