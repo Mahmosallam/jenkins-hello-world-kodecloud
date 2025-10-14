@@ -20,7 +20,7 @@ pipeline {
         stage('run') {
             steps {
                 echo "this is run stage"
-                sh 'java -jar target/hello-demo-*.jar'
+               // sh 'java -jar target/hello-demo-*.jar'
             }
         }
     }
